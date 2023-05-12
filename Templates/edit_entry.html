@@ -1,0 +1,13 @@
+{% extends "wscube/base.html" %}
+{% block content %}
+
+<p><a href="{% url 'wscube:topic' topic.id %}">{{ topic }}</a></p>
+<p>Edit entry:</p>
+
+<form action="{% url 'wscube:edit_entry' entry_id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button name="submit">save changes</button>
+</form>
+
+{% endblock content %}

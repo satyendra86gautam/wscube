@@ -1,0 +1,12 @@
+{% extends "wscube/base.html" %}
+{% block content %}
+
+<p>Add a New Topic:</p>
+
+<form action="{% url 'wscube:new_topic' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_div" }}
+    <button name="submmit">Add Topic</button>
+</form>
+
+{% endblock content %}
